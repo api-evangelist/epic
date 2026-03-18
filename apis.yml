@@ -1,0 +1,19 @@
+aid: epic
+url: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/apis.yml
+apis:
+- aid: epic:epic-api
+  name: Epic EHR / FHIR API
+  tags:
+  - Healthcare
+  - EHR
+  - FHIR
+  - Clinical
+  - HL7
+  image: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/image.png
+  humanURL: https://fhir.epic.com/
+  baseURL: https://fhir.epic.com/interconnect-fhir-oauth
+  properties:
+  - url: https://fhir.epic.com/
+    type: Documentation
+  description: >-
+    Epic Systems provides electronic health record (EHR) APIs including FHIR R4 endpoints, SOAP/XML clinical APIs, and MyChart patient portal interfaces. APIs enable access to patient demographics, clinical notes, lab results, medication lists, appointment scheduling, and care coordination data.
