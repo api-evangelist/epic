@@ -1,0 +1,357 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4/schemas/Patient",
+  "title": "Epic FHIR R4 Patient",
+  "description": "JSON Schema for the HL7 FHIR R4 Patient resource as implemented by Epic EHR. Conforms to the US Core Patient Profile.",
+  "type": "object",
+  "required": ["resourceType", "id"],
+  "properties": {
+    "resourceType": {
+      "type": "string",
+      "const": "Patient",
+      "description": "FHIR resource type identifier"
+    },
+    "id": {
+      "type": "string",
+      "description": "Epic-assigned FHIR Patient logical ID (UUID format)",
+      "format": "uuid"
+    },
+    "meta": {
+      "$ref": "#/$defs/Meta"
+    },
+    "text": {
+      "$ref": "#/$defs/Narrative"
+    },
+    "identifier": {
+      "type": "array",
+      "description": "Business identifiers for the patient (MRN, SSN, Medicare, etc.)",
+      "items": {
+        "$ref": "#/$defs/Identifier"
+      }
+    },
+    "active": {
+      "type": "boolean",
+      "description": "Whether this patient record is in active use",
+      "default": true
+    },
+    "name": {
+      "type": "array",
+      "description": "Patient name(s)",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/HumanName"
+      }
+    },
+    "telecom": {
+      "type": "array",
+      "description": "Contact details (phone, email)",
+      "items": {
+        "$ref": "#/$defs/ContactPoint"
+      }
+    },
+    "gender": {
+      "type": "string",
+      "description": "Administrative gender",
+      "enum": ["male", "female", "other", "unknown"]
+    },
+    "birthDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Patient date of birth (YYYY-MM-DD)"
+    },
+    "deceasedBoolean": {
+      "type": "boolean",
+      "description": "Indicates if the patient is deceased"
+    },
+    "deceasedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time of death"
+    },
+    "address": {
+      "type": "array",
+      "description": "Patient addresses",
+      "items": {
+        "$ref": "#/$defs/Address"
+      }
+    },
+    "maritalStatus": {
+      "$ref": "#/$defs/CodeableConcept",
+      "description": "Marital/civil status"
+    },
+    "communication": {
+      "type": "array",
+      "description": "Language(s) the patient can communicate in",
+      "items": {
+        "type": "object",
+        "required": ["language"],
+        "properties": {
+          "language": {
+            "$ref": "#/$defs/CodeableConcept"
+          },
+          "preferred": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "generalPractitioner": {
+      "type": "array",
+      "description": "Patient's nominated primary care provider(s)",
+      "items": {
+        "$ref": "#/$defs/Reference"
+      }
+    },
+    "managingOrganization": {
+      "$ref": "#/$defs/Reference",
+      "description": "Organization that is the custodian of the patient record"
+    },
+    "extension": {
+      "type": "array",
+      "description": "US Core extensions (race, ethnicity, birthsex, genderIdentity)",
+      "items": {
+        "$ref": "#/$defs/Extension"
+      }
+    }
+  },
+  "$defs": {
+    "Meta": {
+      "type": "object",
+      "properties": {
+        "versionId": {
+          "type": "string"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source": {
+          "type": "string",
+          "format": "uri"
+        },
+        "profile": {
+          "type": "array",
+          "description": "US Core and other conformance profiles",
+          "items": {
+            "type": "string",
+            "format": "uri",
+            "examples": [
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+            ]
+          }
+        }
+      }
+    },
+    "Narrative": {
+      "type": "object",
+      "required": ["status", "div"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["generated", "extensions", "additional", "empty"]
+        },
+        "div": {
+          "type": "string",
+          "description": "XHTML human-readable narrative"
+        }
+      }
+    },
+    "Identifier": {
+      "type": "object",
+      "properties": {
+        "use": {
+          "type": "string",
+          "enum": ["usual", "official", "temp", "secondary", "old"]
+        },
+        "type": {
+          "$ref": "#/$defs/CodeableConcept"
+        },
+        "system": {
+          "type": "string",
+          "format": "uri",
+          "description": "OID or URL for the identifier namespace",
+          "examples": [
+            "urn:oid:1.2.840.114350.1.13.0.1.7.5.737384.14",
+            "http://hl7.org/fhir/sid/us-ssn",
+            "http://hl7.org/fhir/sid/us-medicare"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "description": "The identifier value (MRN, SSN, etc.)"
+        }
+      }
+    },
+    "HumanName": {
+      "type": "object",
+      "properties": {
+        "use": {
+          "type": "string",
+          "enum": ["usual", "official", "temp", "nickname", "anonymous", "old", "maiden"]
+        },
+        "text": {
+          "type": "string",
+          "description": "Full name as a single string"
+        },
+        "family": {
+          "type": "string",
+          "description": "Family name (last name)"
+        },
+        "given": {
+          "type": "array",
+          "description": "Given names (first and middle)",
+          "items": {
+            "type": "string"
+          }
+        },
+        "prefix": {
+          "type": "array",
+          "description": "Name prefixes (Dr., Mr., Mrs.)",
+          "items": { "type": "string" }
+        },
+        "suffix": {
+          "type": "array",
+          "description": "Name suffixes (Jr., II, MD)",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "ContactPoint": {
+      "type": "object",
+      "properties": {
+        "system": {
+          "type": "string",
+          "enum": ["phone", "fax", "email", "pager", "url", "sms", "other"]
+        },
+        "value": {
+          "type": "string"
+        },
+        "use": {
+          "type": "string",
+          "enum": ["home", "work", "temp", "old", "mobile"]
+        },
+        "rank": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "Address": {
+      "type": "object",
+      "properties": {
+        "use": {
+          "type": "string",
+          "enum": ["home", "work", "temp", "old", "billing"]
+        },
+        "type": {
+          "type": "string",
+          "enum": ["postal", "physical", "both"]
+        },
+        "text": {
+          "type": "string"
+        },
+        "line": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "city": {
+          "type": "string"
+        },
+        "district": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string",
+          "description": "US state code or full name"
+        },
+        "postalCode": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        }
+      }
+    },
+    "CodeableConcept": {
+      "type": "object",
+      "properties": {
+        "coding": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "system": {
+                "type": "string",
+                "format": "uri",
+                "description": "Terminology system URI (SNOMED, LOINC, ICD-10, etc.)"
+              },
+              "version": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "display": {
+                "type": "string"
+              },
+              "userSelected": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "Reference": {
+      "type": "object",
+      "properties": {
+        "reference": {
+          "type": "string",
+          "description": "Relative or absolute URL reference (e.g., Practitioner/12345)"
+        },
+        "type": {
+          "type": "string",
+          "format": "uri"
+        },
+        "identifier": {
+          "$ref": "#/$defs/Identifier"
+        },
+        "display": {
+          "type": "string"
+        }
+      }
+    },
+    "Extension": {
+      "type": "object",
+      "required": ["url"],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Extension definition URL",
+          "examples": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity"
+          ]
+        },
+        "valueCode": {
+          "type": "string"
+        },
+        "valueCodeableConcept": {
+          "$ref": "#/$defs/CodeableConcept"
+        },
+        "extension": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Extension"
+          }
+        }
+      }
+    }
+  }
+}

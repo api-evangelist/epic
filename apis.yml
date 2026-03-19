@@ -28,6 +28,8 @@ apis:
     type: FAQ
   - url: https://fhir.epic.com/Resources/Terms
     type: TermsOfService
+  - url: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/openapi/epic-fhir-r4-openapi.yml
+    type: OpenAPI
   description: >-
     Epic FHIR R4 API provides standards-based access to patient health records via HL7 FHIR R4 resources including Patient, Observation, Condition, Medication, Appointment, DiagnosticReport, and 100+ additional resource types. Uses SMART on FHIR (OAuth 2.0) authentication supporting patient-facing, clinician-facing, and backend system-to-system flows. Supports DSTU2, STU3, and R4 versions. Available at no cost to developers via open.epic.com.
 - aid: epic:epic-open-epic-api
@@ -114,6 +116,12 @@ apis:
 common:
 - url: https://www.epic.com/
   type: Website
+- url: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/openapi/epic-fhir-r4-openapi.yml
+  type: OpenAPI
+- url: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/json-schema/epic-fhir-patient-schema.json
+  type: JSONSchema
+- url: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/json-ld/epic-context.jsonld
+  type: JSONLDContext
 - url: https://open.epic.com/
   type: Portal
 - url: https://fhir.epic.com/

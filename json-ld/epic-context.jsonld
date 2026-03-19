@@ -1,0 +1,163 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "fhir": "http://hl7.org/fhir/",
+    "schema": "https://schema.org/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "snomed": "http://snomed.info/sct/",
+    "loinc": "http://loinc.org/",
+    "icd10": "http://hl7.org/fhir/sid/icd-10-cm/",
+
+    "Patient": {
+      "@id": "fhir:Patient",
+      "@type": "schema:Patient"
+    },
+    "Observation": {
+      "@id": "fhir:Observation",
+      "@type": "schema:MedicalObservation"
+    },
+    "Condition": {
+      "@id": "fhir:Condition",
+      "@type": "schema:MedicalCondition"
+    },
+    "MedicationRequest": {
+      "@id": "fhir:MedicationRequest",
+      "@type": "schema:Drug"
+    },
+    "Appointment": {
+      "@id": "fhir:Appointment",
+      "@type": "schema:MedicalAppointment"
+    },
+    "DiagnosticReport": {
+      "@id": "fhir:DiagnosticReport",
+      "@type": "schema:DiagnosticProcedure"
+    },
+    "Immunization": {
+      "@id": "fhir:Immunization",
+      "@type": "schema:VaccineAction"
+    },
+    "AllergyIntolerance": {
+      "@id": "fhir:AllergyIntolerance",
+      "@type": "schema:Drug"
+    },
+    "Encounter": {
+      "@id": "fhir:Encounter",
+      "@type": "schema:MedicalClinic"
+    },
+    "Coverage": {
+      "@id": "fhir:Coverage",
+      "@type": "schema:HealthInsurancePlan"
+    },
+
+    "id": "@id",
+    "resourceType": {
+      "@id": "fhir:resourceType"
+    },
+    "active": {
+      "@id": "fhir:Patient.active",
+      "@type": "xsd:boolean"
+    },
+    "name": {
+      "@id": "schema:name"
+    },
+    "family": "schema:familyName",
+    "given": "schema:givenName",
+    "prefix": "schema:honorificPrefix",
+    "suffix": "schema:honorificSuffix",
+    "gender": {
+      "@id": "schema:gender"
+    },
+    "birthDate": {
+      "@id": "schema:birthDate",
+      "@type": "xsd:date"
+    },
+    "deceasedDateTime": {
+      "@id": "schema:deathDate",
+      "@type": "xsd:dateTime"
+    },
+    "address": {
+      "@id": "schema:address",
+      "@type": "schema:PostalAddress"
+    },
+    "city": "schema:addressLocality",
+    "state": "schema:addressRegion",
+    "postalCode": "schema:postalCode",
+    "country": "schema:addressCountry",
+    "telecom": {
+      "@id": "schema:contactPoint"
+    },
+    "identifier": {
+      "@id": "schema:identifier"
+    },
+    "system": {
+      "@id": "fhir:Coding.system"
+    },
+    "value": {
+      "@id": "schema:value"
+    },
+    "code": {
+      "@id": "fhir:Coding.code"
+    },
+    "display": {
+      "@id": "fhir:Coding.display"
+    },
+    "subject": {
+      "@id": "schema:patient",
+      "@type": "schema:Patient"
+    },
+    "status": {
+      "@id": "schema:eventStatus"
+    },
+    "category": {
+      "@id": "schema:category"
+    },
+    "effectiveDateTime": {
+      "@id": "schema:startDate",
+      "@type": "xsd:dateTime"
+    },
+    "issued": {
+      "@id": "schema:dateIssued",
+      "@type": "xsd:dateTime"
+    },
+    "coding": {
+      "@id": "fhir:CodeableConcept.coding",
+      "@container": "@set"
+    },
+    "generalPractitioner": {
+      "@id": "schema:physician",
+      "@container": "@set"
+    },
+    "managingOrganization": {
+      "@id": "schema:hospitalSystem",
+      "@type": "schema:Hospital"
+    },
+    "communication": {
+      "@id": "schema:knowsLanguage",
+      "@container": "@set"
+    },
+    "language": {
+      "@id": "schema:inLanguage"
+    },
+    "preferred": {
+      "@id": "fhir:Communication.preferred",
+      "@type": "xsd:boolean"
+    },
+    "start": {
+      "@id": "schema:startDate",
+      "@type": "xsd:dateTime"
+    },
+    "end": {
+      "@id": "schema:endDate",
+      "@type": "xsd:dateTime"
+    },
+    "onsetDateTime": {
+      "@id": "schema:startDate",
+      "@type": "xsd:dateTime"
+    },
+    "recordedDate": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:date"
+    }
+  }
+}
