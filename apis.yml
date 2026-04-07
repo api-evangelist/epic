@@ -1,20 +1,18 @@
 aid: epic
-url: 
-  https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/apis.yml
 apis:
   - aid: epic:epic-fhir-r4-api
     name: Epic FHIR R4 API
     tags:
-      - Healthcare
+      - Clinical
       - EHR
       - FHIR
-      - R4
-      - Clinical
+      - Healthcare
       - HL7
-      - SMART on FHIR
       - OAuth2
-    image: 
-      https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/image.png
+      - R4
+      - SMART on FHIR
+    image: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/image.png
     humanURL: https://fhir.epic.com/
     baseURL: https://fhir.epic.com/interconnect-fhir-oauth/api/FHIR/R4
     properties:
@@ -30,8 +28,7 @@ apis:
         type: FAQ
       - url: https://fhir.epic.com/Resources/Terms
         type: TermsOfService
-      - url: 
-          https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/openapi/epic-fhir-r4-openapi.yml
+      - url: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/openapi/epic-fhir-r4-openapi.yml
         type: OpenAPI
     description: >-
       Epic FHIR R4 API provides standards-based access to patient health records via
@@ -43,16 +40,15 @@ apis:
   - aid: epic:epic-open-epic-api
     name: Epic open.epic API
     tags:
-      - Healthcare
-      - EHR
-      - Clinical
-      - HL7
-      - FHIR
       - CDS Hooks
+      - Clinical
+      - EHR
+      - FHIR
       - FHIRcast
+      - Healthcare
+      - HL7
       - Web Services
-    image: 
-      https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/image.png
+    image: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/image.png
     humanURL: https://open.epic.com/
     baseURL: https://open.epic.com
     properties:
@@ -77,14 +73,13 @@ apis:
   - aid: epic:epic-smart-on-fhir-api
     name: Epic SMART on FHIR API
     tags:
-      - Healthcare
+      - Clinical Apps
       - EHR
-      - SMART on FHIR
+      - Healthcare
       - OAuth2
       - Patient Apps
-      - Clinical Apps
-    image: 
-      https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/image.png
+      - SMART on FHIR
+    image: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/image.png
     humanURL: https://fhir.epic.com/Documentation?docId=oauth2tutorial
     baseURL: https://fhir.epic.com/interconnect-fhir-oauth
     properties:
@@ -100,12 +95,11 @@ apis:
   - aid: epic:epic-cds-hooks-api
     name: Epic CDS Hooks API
     tags:
-      - Healthcare
-      - Clinical Decision Support
       - CDS Hooks
+      - Clinical Decision Support
       - EHR
-    image: 
-      https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/image.png
+      - Healthcare
+    image: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/image.png
     humanURL: https://fhir.epic.com/Documentation?docId=cds-hooks
     baseURL: https://fhir.epic.com/interconnect-fhir-oauth
     properties:
@@ -119,13 +113,12 @@ apis:
   - aid: epic:epic-fhir-bulk-data-api
     name: Epic FHIR Bulk Data API
     tags:
-      - Healthcare
+      - Bulk Export
       - EHR
       - FHIR
-      - Bulk Export
+      - Healthcare
       - Population Health
-    image: 
-      https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/image.png
+    image: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/image.png
     humanURL: https://fhir.epic.com/Documentation?docId=fhir_bulk_data
     baseURL: https://fhir.epic.com/interconnect-fhir-oauth
     properties:
@@ -141,14 +134,11 @@ apis:
 common:
   - url: https://www.epic.com/
     type: Website
-  - url: 
-      https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/openapi/epic-fhir-r4-openapi.yml
+  - url: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/openapi/epic-fhir-r4-openapi.yml
     type: OpenAPI
-  - url: 
-      https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/json-schema/epic-fhir-patient-schema.json
+  - url: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/json-schema/epic-fhir-patient-schema.json
     type: JSONSchema
-  - url: 
-      https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/json-ld/epic-context.jsonld
+  - url: https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/json-ld/epic-context.jsonld
     type: JSONLDContext
   - url: https://open.epic.com/
     type: Portal

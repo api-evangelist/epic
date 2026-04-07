@@ -30,16 +30,16 @@ security:
   - smartOnFhir: []
   - backendJwt: []
 tags:
-  - name: Patient
-    description: Patient demographic and administrative information
-  - name: Observation
-    description: Clinical measurements, lab results, and vital signs
-  - name: Condition
-    description: Diagnoses, problems, and health concerns
-  - name: Medication
-    description: Medication requests, statements, and administrations
+  - name: AllergyIntolerance
+    description: Allergy and intolerance records
   - name: Appointment
     description: Scheduling and appointment management
+  - name: Bulk Data
+    description: Asynchronous bulk FHIR data export
+  - name: Condition
+    description: Diagnoses, problems, and health concerns
+  - name: Coverage
+    description: Insurance coverage information
   - name: DiagnosticReport
     description: Diagnostic test reports and results
   - name: DocumentReference
@@ -48,12 +48,12 @@ tags:
     description: Clinical encounters and visits
   - name: Immunization
     description: Immunization records and history
-  - name: AllergyIntolerance
-    description: Allergy and intolerance records
-  - name: Coverage
-    description: Insurance coverage information
-  - name: Bulk Data
-    description: Asynchronous bulk FHIR data export
+  - name: Medication
+    description: Medication requests, statements, and administrations
+  - name: Observation
+    description: Clinical measurements, lab results, and vital signs
+  - name: Patient
+    description: Patient demographic and administrative information
 paths:
   /Patient:
     get:
