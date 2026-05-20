@@ -190,6 +190,10 @@ apis:
       - type: Documentation
         url: https://dev.epicgames.com/docs/game-services/eos-voice-interface
 common:
+  - type: GitHubOrganization
+    url: https://github.com/epicgames
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/epic-games
   - type: Website
     url: https://www.epicgames.com/
   - type: Portal
