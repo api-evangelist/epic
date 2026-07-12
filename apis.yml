@@ -190,6 +190,10 @@ apis:
       - type: Documentation
         url: https://dev.epicgames.com/docs/game-services/eos-voice-interface
 common:
+  - type: VulnerabilityDisclosure
+    url: security/epic-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/epic-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/epicgames
   - type: LinkedIn
