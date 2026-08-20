@@ -32,6 +32,15 @@ tags:
   - Leaderboards
   - Matchmaking
   - Anti-Cheat
+  - Authentication
+tags_raw:
+  - Game Services
+  - Gaming
+  - Cross-Platform
+  - Achievements
+  - Leaderboards
+  - Matchmaking
+  - Anti-Cheat
   - OAuth2
 url: >-
   https://raw.githubusercontent.com/api-evangelist/epic/refs/heads/main/apis.yml
@@ -51,6 +60,10 @@ apis:
     humanURL: https://dev.epicgames.com/docs/epic-account-services
     baseURL: https://api.epicgames.dev
     tags:
+      - Authentication
+      - Identity
+      - Single Sign-On
+    tags_raw:
       - Authentication
       - OAuth2
       - Identity
@@ -132,6 +145,11 @@ apis:
     humanURL: https://dev.epicgames.com/docs/epic-games-store/services/ecom/ecom-overview
     baseURL: https://api.epicgames.dev
     tags:
+      - E-Commerce
+      - Entitlements
+      - Catalog
+      - Epic Games Store
+    tags_raw:
       - Ecommerce
       - Entitlements
       - Catalog
